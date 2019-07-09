@@ -1,0 +1,495 @@
+body {
+    background:white; /*default color*/
+    /*transition: background-color 5s linear;*/
+    height:100%; 
+    margin:0;/* or else margin */
+    padding:0;
+}
+
+html {
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+.moth {
+    background:#ffae42 !important;
+}
+
+.evening {
+    background: rgba(103, 128, 159, 0.5);/*rgba(46, 49, 49, 0.5)*/
+}
+
+#burning {  
+    /*opacity: 1;*/
+    top:50%;
+    position:absolute;
+    margin:0;/*auto; */
+    padding:0;
+    transform: translate(-50%, -50%);
+    margin-left: 29%;
+    white-space: nowrap;
+    display:none;
+ }
+
+
+/*burning*/
+ .bu { 
+    font-size: 53.5px;
+    color: #ffae42; 
+    letter-spacing:5px;
+    font-family: 'Cousine', monospace;
+ }
+
+ /* centered text on small screen */
+ @media only screen and (max-width: 576px) {
+    #burning {
+        left:50%;
+        margin:0;
+    }
+
+    #gump2, #gump4, #gump5, #gump6, 
+    #gump8, #gump9, #gump10, #gump11, 
+    #gump12, #gump14,#gump16, #gump17, 
+    #gump19, #gump20, #gump21, #gump23, 
+    #gump25, #gump26, #gump27  {
+        transform:translate(0, 0) translate3d(0, 0, 0) !important;
+    }
+
+ }
+
+
+ /*burning animation*/
+.lightness {
+    animation-name: lightness;
+    animation-iteration-count:1;
+   /*animation-duration: 1s; /*5.0s;*/
+    animation-timing-function: ease-out;
+}
+
+@keyframes lightness {
+    from {color: white; } 
+	to {color: black; }
+}
+
+/************ index.html ***********/
+#background {
+    background-image: url("imgs/moon.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*the tyger by william blake*/
+#title p {
+    margin:0; /* or else at top and bottom*/
+    color:white;
+    font-family: 'Cousine', monospace;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    font-size: 20px;
+    line-height: 2;
+    letter-spacing:13px;
+    white-space: nowrap;
+}   
+
+.twinkle {
+    animation:twinkle infinite; 
+}
+    
+@keyframes twinkle {
+    0%     { opacity: 0.6; }
+    60%     { opacity: 0.2; }  
+    80%   { opacity: 1; }
+    100%   { opacity: 0.4; }
+} /* no @webkit*/
+    
+.box {
+background-color: white;
+position: fixed;
+border-radius: 10px;
+opacity:1;
+}
+
+/************ end index.html ***********/
+
+
+#forest {
+    display:none;
+    
+}
+
+#why {
+    display:inline-block; 
+    overflow:hidden !important;/*QQQ*/
+    white-space:nowrap !important;
+}
+
+.gump span{
+    padding: .3em; /*.5em .5em;. or no space btw letters */
+    /* text-align: right; */
+    display:inline-block; /*A <span> is an inline elements and Transform property doesn't apply on inline elements*/
+    margin: 0;
+    overflow:hidden !important;/*QQQ*/
+    white-space:nowrap !important;
+    letter-spacing:5px;
+    border-top: 10px solid transparent;
+    margin-top: -10px;
+}
+
+.waterfall{
+    color:white;
+    font-size:26px;
+    font-family: 'Cousine', monospace;
+    transition: transform 1.7s;/*1s 0.56s;*/
+}
+
+.break{
+    display:none;
+}
+
+/*in the forest of the night */
+div#elephant.gump {  /* QQQQQ*/
+    color:red;
+    display:none;
+    top:50%;
+    left:53%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    position:absolute; /*for z-index to work */
+    z-index:1; 
+    width: 69%;
+}
+
+ /* centered text on small screen */
+ @media only screen and (max-width: 992px) {
+    div#elephant.gump {
+        width:80% !important;
+        left:51.3%;
+        /*no worktext-align:left !important;*/
+    }
+
+    .waterfall {
+        font-size: 19px;
+        font-weight:thick !important;
+        /*no worktext-align:left !important;*/
+    }
+
+    .gump span {
+        overflow:auto !important;/*QQQ*/
+        white-space:pre !important;
+    }
+
+    .break {
+        display:block;
+    }
+    
+ }
+
+
+.waterfall:hover {
+    transform:translateY(13%)!important; /*10px*/
+    /*transition: border-color 0s, font-size 1s ease-out;*/
+}
+
+
+#typewriter {
+    writing-mode: vertical-rl;
+    text-orientation:upright;
+    animation: tipping 4.5s steps(120,end); 
+}
+
+@keyframes tipping {
+    from {
+        height:0;
+    }
+    to {
+        height:71%;
+    }
+}
+
+#typewriter {
+    top:50%;
+}
+
+#classic {
+    top:38%;
+}
+
+/*what immortal hand or */
+#typewriter, #classic {  
+    left:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size:16px;
+    color: #ffae42;
+    font-family:'Cousine', monospace;
+    overflow:hidden !important;
+    white-space:nowrap; /*QQ*/
+    margin: 15px;/*before 15px auto or 0 auto*/
+    letter-spacing: 0.15em; 
+   /*animation: typing 5s steps(58,end); /*steps*/
+}
+
+/*
+@keyframes typing {
+    from {
+        width:0; /*height:0%
+    }
+    to {width:100%; /*height:100%
+    }
+}*/
+
+/*bright*/
+#light { /*before light */
+    display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    font-size:50px;
+    color:black;
+    letter-spacing:21px;
+    font-family: 'Cousine', monospace;
+    /*transition: color 0.5s; */
+}
+
+#container {
+    /*background-color:white;/*#00ff00;*/
+    height: 100%; 
+    width: 100%;
+}
+
+/*tiger tiger */
+article {
+    position:relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem; /*or else not vertically aligned */
+    text-align:center;
+    font-family: 'Cousine', monospace;
+    font-size: 50px;
+}
+
+.left-half {
+    float: left;
+    width:50%;
+    color:white; 
+    height:100%; /*not vertically centered  QQQ*/
+}
+
+.right-half {
+    float:left;
+    width:50%;
+    color:white; 
+    height:100%;/* not vertically centered  QQQ*/
+}
+
+/*black and white split screen when click*/
+.batman {
+    animation-name: batman;
+    animation-iteration-count:1;
+    animation-duration: 2.9s;
+    animation-timing-function: ease;
+}
+
+@keyframes batman {
+    from {
+        background:linear-gradient( /*no space btw gradient and bracket*/
+        to right, 
+        black 0%,
+        black 50%,
+        white 50%,
+        white 100%
+        )
+    }
+
+    to {
+        background:linear-gradient( /*no space btw gradient and bracket*/
+        to right, 
+            white 0%,
+            white 50%,
+            black 50%,
+            black 100%
+        )
+    }
+}
+
+/*bright screen flash*/
+.blinkdiv {
+    height: 100px;
+    background-color: black; 
+    animation-name: blackWhite;  
+    animation-iteration-count:1;
+    animation-duration: 3.1s; /*2.3s;;*/
+    animation-timing-function: /*ease-out; */cubic-bezier(0.7,1.0,0.9,0.7);
+}   
+
+@keyframes blackWhite {  
+   0% { background-color: black; } 
+    2% { background-color: white; } 
+    4% { background-color: black; } 
+    5% { background-color: white; }
+    100% { background-color: black; }
+  }
+  
+  .blinkdev {
+    height: 100px;
+    background-color: black;
+    animation-name: whiteBlack;  
+    animation-iteration-count: 2;
+    animation-duration: 0.12s; 
+    animation-timing-function: ease-out; 
+  }
+
+  @keyframes whiteBlack {  
+    0% { background-color: black; }
+    25% { background-color: black; }
+    26% { background-color: white; }
+    50% { background-color: white; }
+   100% { background-color: black; } 
+  }
+
+svg {
+    width: 100%;
+    height: 100%;
+    display:none;
+    z-index:-1;
+    position:absolute;
+}
+
+.sway {
+    animation: sway1 5s infinite; 
+    transform-origin: 5% 5% 0; /*transform 0.3s ease-out */
+}
+
+@keyframes sway1 {
+    0%, 100%{ transform: rotate(-1deg);}
+    50%{ transform: rotate(1deg); }
+}
+
+/*
+#one:hover {
+   transform: translateX(100px);
+}*/
+
+/*hover effect: in the forest of the night*/
+#gump1 {
+    
+}
+
+#gump2 {
+    transform:translateY(20px);
+    /*-webkit-transform: translateY(20px);*/
+}
+
+/*
+#gump3 {
+    transform:translateY(35px);
+}*/
+
+#gump4 {
+    transform:translateY(35px);
+}
+
+#gump5 {
+    transform:translateY(50px);
+}
+
+#gump6 {
+    transform:translateY(65px);
+}
+
+/*
+#gump7 {
+    transform:translateY(35px);
+}*/
+
+#gump8 {
+    transform:translateY(80px);
+}
+
+#gump9 {
+    transform:translateY(65px);
+}
+
+#gump10 {
+    transform:translateY(50px);
+}
+
+#gump11 {
+    transform:translateY(35px);
+}
+
+#gump12 {
+    transform:translateY(20px);
+}
+
+#gump13 {
+    /*nothing*/
+}
+
+#gump14 {
+    transform:translateY(-35px);
+}
+
+#gump15 {
+    
+}
+
+#gump16 {
+    transform:translateY(-50px);
+   
+}
+
+#gump17 {
+    transform:translateY(-65px);
+}
+
+#gump18 {
+    
+}
+
+#gump19 {
+    transform:translateY(-80px);
+}
+
+#gump20 {
+    transform:translateY(-65px);
+}
+
+#gump21 {
+    transform:translateY(-50px);
+}
+
+#gump23 {
+    transform:translateY(-35px);
+}
+
+#gump22 {
+    
+}
+
+#gump23 {
+    transform:translateY(-20px);
+}
+
+#gump24 {
+    /*blank*/
+}
+
+#gump25 {
+    transform:translateY(20px);
+}
+
+#gump26 {
+    transform:translateY(35px);
+}
+
+#gump27 {
+    transform:translateY(65px);
+}
