@@ -1,6 +1,6 @@
 # Tyger, Tyger 1:1
 
-Simple project showing first stanza of the poem “Tyger, Tyger” by William Blake
+Simple project showing first stanza of the poem “The Tyger” by William Blake
 
 ## Technologies
 This project is created using HTML, CSS, JavaScript, JQuery
